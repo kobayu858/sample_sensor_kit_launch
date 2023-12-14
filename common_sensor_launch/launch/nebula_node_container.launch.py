@@ -206,7 +206,7 @@ def launch_setup(context, *args, **kwargs):
 
     component_loader = LoadComposableNodes(
         composable_node_descriptions=nodes,
-        target_container=LaunchConfiguration("container_name"),
+        target_container="origin_container"
         condition=IfCondition(LaunchConfiguration("use_pointcloud_container")),
     )
 
@@ -250,7 +250,7 @@ def launch_setup(context, *args, **kwargs):
         condition=IfCondition(LaunchConfiguration("launch_driver")),
     )
 
-    return [container, component_loader, driver_component_loader]
+    return [component_loader]
 
 
 def generate_launch_description():
