@@ -206,7 +206,7 @@ def launch_setup(context, *args, **kwargs):
 
     component_loader = LoadComposableNodes(
         composable_node_descriptions=nodes,
-        target_container="origin_container"
+        target_container="origin_container",
         condition=IfCondition(LaunchConfiguration("use_pointcloud_container")),
     )
 
